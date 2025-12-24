@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Joyeux Noël 🎄</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Polices chic -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        height: 100vh;
+        background: linear-gradient(to bottom, #f5f106, #c31432);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+        color: #fff;
+    }
+
+    /* Carte centrale */
+    .card {
+        position: relative;
+        background: rgba(241, 28, 28, 0.85);
+        padding: 45px 35px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        z-index: 10;
+        max-width: 520px;
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    .icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ffd700;
+    }
+
+    p {
+        font-size: 1.15rem;
+        line-height: 1.6;
+    }
+
+    .signature {
+        margin-top: 20px;
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    .signature span { color: #ffd700; font-weight: 500; }
+
+    /* Flocons de neige */
+    .snowflake {
+        position: absolute;
+        top: -10px;
+        color: #fff;
+        font-size: 1em;
+        user-select: none;
+        z-index: 5;
+        animation-name: fall;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0.8; }
+    }
+
+    .snowflake:nth-child(1) { left: 5%; font-size: 1rem; animation-delay: 0s; }
+    .snowflake:nth-child(2) { left: 15%; font-size: 1.2rem; animation-delay: 2s; }
+    .snowflake:nth-child(3) { left: 25%; font-size: 0.9rem; animation-delay: 4s; }
+    .snowflake:nth-child(4) { left: 35%; font-size: 1.3rem; animation-delay: 1s; }
+    .snowflake:nth-child(5) { left: 50%; font-size: 1.1rem; animation-delay: 3s; }
+    .snowflake:nth-child(6) { left: 65%; font-size: 1.4rem; animation-delay: 5s; }
+    .snowflake:nth-child(7) { left: 75%; font-size: 1rem; animation-delay: 2.5s; }
+    .snowflake:nth-child(8) { left: 85%; font-size: 1.2rem; animation-delay: 4.5s; }
+
+    /* Bouton musique pour mobiles */
+    .music-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background: #ffd700;
+        color: #240b36;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .music-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- Flocons -->
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❄</div>
+
+<!-- Musique de Noël automatique -->
+<audio id="music" autoplay loop>
+  <source src="C:\Users\EGBLA PIERRE\Documents\Genie-logiciel\We-Wish-You-chosic.com_.mp3" type="audio/mpeg">
+  Votre navigateur ne supporte pas l’audio.
+</audio>
+
+<!-- Carte centrale -->
+<div class="card">
+    <div class="icon">🎄✨🎁</div>
+    <h1>Joyeux Noël</h1>
+    <p>
+        Que la magie de Noël illumine vos cœurs,  
+        remplisse vos maisons de joie.
+    </p>
+
+    <!-- Bouton musique pour mobiles -->
+    <button class="music-btn" onclick="document.getElementById('music').play()">🎵 Écouter la musique</button>
+
+    <div class="signature">
+        De la part de <span>Gad</span>
+    </div>
+</div>
+
+</body>
+</html>
